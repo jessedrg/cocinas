@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Phone, Menu, X } from "lucide-react"
 
-const PHONE = "+34936941874"
+const PHONE = "+34936941859"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -26,7 +26,7 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-[13px] text-muted-foreground hover:text-foreground transition-colors">
             <Phone className="w-3.5 h-3.5" />
-            936 941 874
+            936 941 859
           </a>
           <a
             href={`tel:${PHONE}`}
@@ -49,7 +49,7 @@ export function Navbar() {
           <Link href="#faq" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">FAQ</Link>
           <hr className="border-border" />
           <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-sm">
-            <Phone className="w-4 h-4" /> 936 941 874
+            <Phone className="w-4 h-4" /> 936 941 859
           </a>
           <a href={`tel:${PHONE}`} className="block text-center bg-foreground text-background text-sm px-6 py-3">
             Pedir presupuesto

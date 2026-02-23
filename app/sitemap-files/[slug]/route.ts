@@ -7,7 +7,8 @@ function buildUrlEntry(loc: string) {
 }
 
 export async function GET(_req: Request, { params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
+  const rawSlug = (await params).slug
+  const slug = rawSlug.replace(/\.xml$/, "")
   const urls: string[] = []
 
   if (slug === "service-landings") {

@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${fullTitle} | Compara Presupuestos | forma.`,
-    description: `${serviceName.title}${modifierText.toLowerCase()} en ${cityName}. Compara presupuestos de profesionales verificados. Asesoramiento GRATUITO. Llama: +34 936 941 874`,
+    description: `${serviceName.title}${modifierText.toLowerCase()} en ${cityName}. Compara presupuestos de profesionales verificados. Asesoramiento GRATUITO. Llama: +34 936 941 859`,
     alternates: { canonical: `https://www.formaypunto.com/${rawService}/${citySlug}/` },
     openGraph: { title: fullTitle, description: `Los mejores profesionales de ${serviceName.singular} en ${cityName}. Presupuestos gratis.`, type: "website", siteName: "forma." },
   }

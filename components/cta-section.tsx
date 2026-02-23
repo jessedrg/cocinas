@@ -1,6 +1,6 @@
 import { Phone, ArrowRight } from "lucide-react"
 
-const PHONE = "+34936941874"
+const PHONE = "+34936941859"
 
 export function CtaSection() {
   return (
@@ -32,7 +32,7 @@ export function CtaSection() {
               className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
             >
               <Phone className="w-4 h-4" />
-              +34 936 941 874
+              +34 936 941 859
             </a>
             <a
               href="#servicios"

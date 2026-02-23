@@ -5,8 +5,8 @@ import Link from "next/link"
 import type { Service } from "@/lib/sitemap-data"
 import { Phone, Star, Shield, Clock, Ruler, Users, CheckCircle, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react"
 
-const PHONE = "+34936941874"
-const PHONE_DISPLAY = "+34 936 941 874"
+const PHONE = "+34936941859"
+const PHONE_DISPLAY = "+34 936 941 859"
 
 function hashCode(str: string): number {
   let hash = 0

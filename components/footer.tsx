@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
 
-const PHONE = "+34936941874"
+const PHONE = "+34936941859"
 
 export function Footer() {
   return (
@@ -38,7 +38,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-xs text-background/60 hover:text-background transition-colors">
-                  <Phone className="w-3.5 h-3.5" /> +34 936 941 874
+                  <Phone className="w-3.5 h-3.5" /> +34 936 941 859
                 </a>
               </li>
               <li>

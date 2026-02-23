@@ -25,7 +25,7 @@ export async function GET() {
             Reformas de cocina en toda España
           </div>
           <div style={{ fontSize: 18, color: "#faf9f640", marginTop: 24, fontFamily: "system-ui, sans-serif" }}>
-            Compara presupuestos · Profesionales verificados · +34 936 941 874
+            Compara presupuestos · Profesionales verificados · +34 936 941 859
           </div>
         </div>
       </div>

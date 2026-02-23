@@ -1,6 +1,6 @@
 import { Phone, ArrowDown } from "lucide-react"
 
-const PHONE = "+34936941874"
+const PHONE = "+34936941859"
 
 export function HomeHero() {
   return (
