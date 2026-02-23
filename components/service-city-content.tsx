@@ -8,6 +8,19 @@ import { Phone, Star, Shield, Clock, Ruler, Users, CheckCircle, ChevronDown, Arr
 const PHONE = "+34936941859"
 const PHONE_DISPLAY = "+34 936 941 859"
 
+const SERVICE_IMAGES: Record<string, string> = {
+  "reforma-cocina": "https://images.unsplash.com/photo-1632583824020-937ae9564495?q=80&w=1558&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "cocina-a-medida": "https://images.unsplash.com/photo-1628797285815-453c1d0d21e3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "muebles-cocina": "https://images.unsplash.com/photo-1583845112239-97ef1341b271?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "encimera-cocina": "https://images.unsplash.com/photo-1549089154-ad7b2808944c?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "cocina-moderna": "https://images.unsplash.com/photo-1586208958839-06c17cacdf08?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "cocina-integral": "https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "diseno-cocina": "https://images.unsplash.com/photo-1696986681436-f5ee12981bc9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "cocina-pequena": "https://images.unsplash.com/photo-1633109611134-c41b5c0bbc1a?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "instalacion-cocina": "https://images.unsplash.com/photo-1632583824020-937ae9564495?q=80&w=1558&auto=format&fit=crop&ixlib=rb-4.1.0",
+  "cocina-industrial": "https://images.unsplash.com/photo-1586208958839-06c17cacdf08?q=80&w=1565&auto=format&fit=crop&ixlib=rb-4.1.0",
+}
+
 function hashCode(str: string): number {
   let hash = 0
   for (let i = 0; i < str.length; i++) {
@@ -108,6 +121,7 @@ export function ServiceCityContent({
   const reviews = generateReviews(cityName, serviceId)
   const faqs = generateFAQs(cityName, serviceName, serviceId)
   const avgRating = (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1)
+  const heroImg = SERVICE_IMAGES[serviceId] || SERVICE_IMAGES["reforma-cocina"]
 
   function getCityDisplayName(slug: string): string {
     return slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
@@ -116,8 +130,12 @@ export function ServiceCityContent({
   return (
     <>
       {/* Hero */}
-      <section className="bg-foreground text-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-28">
+      <section className="relative bg-foreground text-background overflow-hidden">
+        <div className="absolute inset-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={heroImg} alt={pageTitle} className="w-full h-full object-cover opacity-30" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-28">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-end">
             <div className="lg:col-span-7">
               <nav className="text-[10px] tracking-[0.3em] uppercase text-background/30 mb-8 font-sans flex items-center gap-2">
