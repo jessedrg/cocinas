@@ -1,12 +1,12 @@
-import { Phone } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 
-const PHONE = "+34936941859"
+const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
 
 const steps = [
   {
     num: "01",
     title: "Cuentanos tu proyecto",
-    desc: "Llamanos o escribenos. Que quieres reformar, tu estilo, tu presupuesto orientativo. 5 minutos bastan.",
+    desc: "Escribenos por WhatsApp. Que quieres reformar, tu estilo, tu presupuesto orientativo. 5 minutos bastan.",
   },
   {
     num: "02",
@@ -34,10 +34,12 @@ export function HowItWorks() {
               Nos encargamos de todo para que tu solo tengas que elegir.
             </p>
             <a
-              href={`tel:${PHONE}`}
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
             >
-              <Phone className="w-4 h-4" />
+              <MessageCircle className="w-4 h-4" />
               Empezar ahora
             </a>
           </div>

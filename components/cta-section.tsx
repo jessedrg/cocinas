@@ -1,6 +1,6 @@
-import { Phone, ArrowRight } from "lucide-react"
+import { MessageCircle, ArrowRight } from "lucide-react"
 
-const PHONE = "+34936941859"
+const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
 
 export function CtaSection() {
   return (
@@ -24,15 +24,17 @@ export function CtaSection() {
             <span className="italic font-light">una historia nueva.</span>
           </h2>
           <p className="text-sm text-background/60 mt-6 font-sans leading-relaxed max-w-md">
-            Empieza la tuya con una llamada. Sin compromiso, sin coste. Solo el primer paso hacia la cocina que mereces.
+            Empieza la tuya hoy. Sin compromiso, sin coste. Solo el primer paso hacia la cocina que mereces.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-10">
             <a
-              href={`tel:${PHONE}`}
+              href={WA_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
             >
-              <Phone className="w-4 h-4" />
-              +34 936 941 859
+              <MessageCircle className="w-4 h-4" />
+              Contactar por WhatsApp
             </a>
             <a
               href="#servicios"

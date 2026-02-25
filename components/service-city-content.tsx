@@ -3,10 +3,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import type { Service } from "@/lib/sitemap-data"
-import { Phone, Star, Shield, Clock, Ruler, Users, CheckCircle, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react"
+import { MessageCircle, Star, Shield, Clock, Ruler, Users, CheckCircle, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react"
 
-const PHONE = "+34936941859"
-const PHONE_DISPLAY = "+34 936 941 859"
+const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
 
 const SERVICE_IMAGES: Record<string, string> = {
   "reforma-cocina": "https://images.unsplash.com/photo-1632583824020-937ae9564495?q=80&w=1558&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -69,8 +68,8 @@ function generateReviews(cityName: string, serviceId: string) {
 
 function generateFAQs(cityName: string, serviceName: { title: string; singular: string }, serviceId: string) {
   const faqs = [
-    { q: `Cuanto cuesta una ${serviceName.singular} en ${cityName}?`, a: `El precio de una ${serviceName.singular} en ${cityName} depende del tamano, los materiales y el alcance del proyecto. Una reforma parcial puede costar entre 4.000-8.000€, mientras que una reforma integral llave en mano oscila entre 8.000-20.000€. forma. te presenta presupuestos detallados y comparados de profesionales verificados en ${cityName}. Llama al ${PHONE_DISPLAY} para orientacion gratuita.` },
-    { q: `El servicio de forma. en ${cityName} tiene algun coste?`, a: `El asesoramiento de forma. es completamente gratuito. Comparamos profesionales, te presentamos presupuestos y te acompanamos durante la obra. Sin comisiones ni costes ocultos. Llama sin compromiso.` },
+    { q: `Cuanto cuesta una ${serviceName.singular} en ${cityName}?`, a: `El precio de una ${serviceName.singular} en ${cityName} depende del tamano, los materiales y el alcance del proyecto. Una reforma parcial puede costar entre 4.000-8.000€, mientras que una reforma integral llave en mano oscila entre 8.000-20.000€. forma. te presenta presupuestos detallados y comparados de profesionales verificados en ${cityName}. Escribenos por WhatsApp para orientacion gratuita.` },
+    { q: `El servicio de forma. en ${cityName} tiene algun coste?`, a: `El asesoramiento de forma. es completamente gratuito. Comparamos profesionales, te presentamos presupuestos y te acompanamos durante la obra. Sin comisiones ni costes ocultos. Escribenos por WhatsApp sin compromiso.` },
     { q: `Cuanto tiempo tarda una ${serviceName.singular} en ${cityName}?`, a: `Depende del alcance del proyecto. Una reforma parcial (muebles y encimera) suele completarse en 1-2 semanas. Una reforma integral puede tardar entre 3-6 semanas. Los profesionales que recomendamos en ${cityName} siempre dan un plazo cerrado antes de empezar.` },
   ]
 
@@ -161,11 +160,13 @@ export function ServiceCityContent({
             <div className="lg:col-span-5 lg:col-start-8">
               <div className="flex flex-col gap-3">
                 <a
-                  href={`tel:${PHONE}`}
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
                 >
-                  <Phone className="w-4 h-4" />
-                  Presupuesto gratis: {PHONE_DISPLAY}
+                  <MessageCircle className="w-4 h-4" />
+                  Presupuesto gratis
                 </a>
                 <a
                   href="#como-funciona"
@@ -288,10 +289,9 @@ export function ServiceCityContent({
             <br />
             <span className="italic font-light">los mejores profesionales.</span>
           </h2>
-          <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-            <Phone className="w-4 h-4" /> Llamar ahora: {PHONE_DISPLAY}
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
+            <MessageCircle className="w-4 h-4" /> Contactar por WhatsApp
           </a>
-          <p className="text-[10px] text-background/30 mt-4 font-sans">L-V 9:00-20:00 · S 10:00-14:00</p>
         </div>
       </section>
 
@@ -375,8 +375,8 @@ export function ServiceCityContent({
           <p className="text-[10px] tracking-[0.4em] uppercase text-background/20 mb-4 font-sans">Da el primer paso</p>
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl tracking-tight text-background">La cocina que imaginas, existe.</h2>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-            <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-              <Phone className="w-4 h-4" /> {PHONE_DISPLAY}
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
+              <MessageCircle className="w-4 h-4" /> WhatsApp
             </a>
             <Link href="/" className="inline-flex items-center justify-center gap-2 border border-background/20 text-background px-8 py-4 text-sm font-sans hover:border-background/50 transition-colors">
               Ver servicios <ArrowUpRight className="w-3.5 h-3.5" />
@@ -390,7 +390,7 @@ export function ServiceCityContent({
         "@context": "https://schema.org", "@type": "LocalBusiness",
         name: `forma. - ${pageTitle}`,
         description: `Los mejores profesionales de ${serviceName.singular} en ${cityName}. Presupuestos gratis.`,
-        telephone: PHONE, url: `https://www.formaypunto.com/${serviceId}/${citySlug}/`,
+         url: `https://www.formaypunto.com/${serviceId}/${citySlug}/`,
         address: { "@type": "PostalAddress", addressLocality: cityName, addressCountry: "ES" },
         aggregateRating: { "@type": "AggregateRating", ratingValue: avgRating, reviewCount: reviews.length, bestRating: "5", worstRating: "1" },
       })}} />

@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Phone, Menu, X } from "lucide-react"
+import { MessageCircle, Menu, X } from "lucide-react"
 
-const PHONE = "+34936941859"
+const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -24,14 +24,13 @@ export function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
-          <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-[13px] text-muted-foreground hover:text-foreground transition-colors">
-            <Phone className="w-3.5 h-3.5" />
-            936 941 859
-          </a>
           <a
-            href={`tel:${PHONE}`}
-            className="bg-foreground text-background text-[13px] px-5 py-2 hover:opacity-80 transition-opacity"
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-foreground text-background text-[13px] px-5 py-2 hover:opacity-80 transition-opacity"
           >
+            <MessageCircle className="w-3.5 h-3.5" />
             Pedir presupuesto
           </a>
         </div>
@@ -48,10 +47,10 @@ export function Navbar() {
           <Link href="#opiniones" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Opiniones</Link>
           <Link href="#faq" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">FAQ</Link>
           <hr className="border-border" />
-          <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-sm">
-            <Phone className="w-4 h-4" /> 936 941 859
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm">
+            <MessageCircle className="w-4 h-4" /> WhatsApp
           </a>
-          <a href={`tel:${PHONE}`} className="block text-center bg-foreground text-background text-sm px-6 py-3">
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-foreground text-background text-sm px-6 py-3">
             Pedir presupuesto
           </a>
         </div>

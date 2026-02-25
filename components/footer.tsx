@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { MessageCircle, Mail, MapPin } from "lucide-react"
 
-const PHONE = "+34936941859"
+const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
 
 export function Footer() {
   return (
@@ -37,8 +37,8 @@ export function Footer() {
             <p className="text-[10px] tracking-[0.3em] uppercase text-background/30 mb-4">Contacto</p>
             <ul className="space-y-3">
               <li>
-                <a href={`tel:${PHONE}`} className="flex items-center gap-2 text-xs text-background/60 hover:text-background transition-colors">
-                  <Phone className="w-3.5 h-3.5" /> +34 936 941 859
+                <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-background/60 hover:text-background transition-colors">
+                  <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
                 </a>
               </li>
               <li>
