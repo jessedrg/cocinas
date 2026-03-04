@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { MessageCircle, Menu, X } from "lucide-react"
+import { MessageCircle, Menu, X, Phone } from "lucide-react"
 
 const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
+const PHONE = "936941859"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -25,12 +26,10 @@ export function Navbar() {
 
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`tel:+34${PHONE}`}
             className="flex items-center gap-2 bg-foreground text-background text-[13px] px-5 py-2 hover:opacity-80 transition-opacity"
           >
-            <MessageCircle className="w-3.5 h-3.5" />
+            <Phone className="w-3.5 h-3.5" />
             Pedir presupuesto
           </a>
         </div>
@@ -50,7 +49,8 @@ export function Navbar() {
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm">
             <MessageCircle className="w-4 h-4" /> WhatsApp
           </a>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-foreground text-background text-sm px-6 py-3">
+          <a href={`tel:+34${PHONE}`} className="block text-center bg-foreground text-background text-sm px-6 py-3">
+            <Phone className="w-4 h-4 inline mr-2" />
             Pedir presupuesto
           </a>
         </div>
