@@ -3,9 +3,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import type { Service } from "@/lib/sitemap-data"
-import { MessageCircle, Star, Shield, Clock, Ruler, Users, CheckCircle, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react"
+import { Phone, Star, Shield, Clock, Ruler, Users, CheckCircle, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react"
 
-const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
+const PHONE = "936941859"
 
 const SERVICE_IMAGES: Record<string, string> = {
   "reforma-cocina": "https://images.unsplash.com/photo-1632583824020-937ae9564495?q=80&w=1558&auto=format&fit=crop&ixlib=rb-4.1.0",
@@ -160,12 +160,10 @@ export function ServiceCityContent({
             <div className="lg:col-span-5 lg:col-start-8">
               <div className="flex flex-col gap-3">
                 <a
-                  href={WA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`tel:+34${PHONE}`}
                   className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <Phone className="w-4 h-4" />
                   Presupuesto gratis
                 </a>
                 <a
@@ -289,8 +287,8 @@ export function ServiceCityContent({
             <br />
             <span className="italic font-light">los mejores profesionales.</span>
           </h2>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-            <MessageCircle className="w-4 h-4" /> Contactar por WhatsApp
+          <a href={`tel:+34${PHONE}`} className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
+            <Phone className="w-4 h-4" /> Pedir presupuesto
           </a>
         </div>
       </section>
@@ -375,8 +373,8 @@ export function ServiceCityContent({
           <p className="text-[10px] tracking-[0.4em] uppercase text-background/20 mb-4 font-sans">Da el primer paso</p>
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl tracking-tight text-background">La cocina que imaginas, existe.</h2>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-              <MessageCircle className="w-4 h-4" /> WhatsApp
+            <a href={`tel:+34${PHONE}`} className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
+              <Phone className="w-4 h-4" /> Llamar ahora
             </a>
             <Link href="/" className="inline-flex items-center justify-center gap-2 border border-background/20 text-background px-8 py-4 text-sm font-sans hover:border-background/50 transition-colors">
               Ver servicios <ArrowUpRight className="w-3.5 h-3.5" />

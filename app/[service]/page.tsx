@@ -4,12 +4,12 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { VALID_SERVICES, type Service } from "@/lib/sitemap-data"
-import { MessageCircle, ArrowRight, MapPin } from "lucide-react"
+import { Phone, ArrowRight, MapPin } from "lucide-react"
 
 export const dynamicParams = true
 export const revalidate = 604800
 
-const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
+const PHONE = "936941859"
 
 interface ServiceInfo {
   name: string
@@ -241,8 +241,8 @@ export default async function ServiceHubPage({ params }: PageProps) {
               {serviceInfo.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-10">
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-                <MessageCircle className="w-4 h-4" /> Presupuesto gratis
+              <a href={`tel:+34${PHONE}`} className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
+                <Phone className="w-4 h-4" /> Presupuesto gratis
               </a>
               <a href="#ciudades" className="inline-flex items-center justify-center gap-2 border border-background/20 text-background px-8 py-4 text-sm font-sans hover:border-background/50 transition-colors">
                 Ver ciudades <ArrowRight className="w-3.5 h-3.5" />
@@ -372,7 +372,7 @@ export default async function ServiceHubPage({ params }: PageProps) {
 
           <div className="mt-12 text-center">
             <p className="text-sm text-muted-foreground font-sans">
-              ¿No encuentras tu ciudad? <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:no-underline">Escríbenos por WhatsApp</a> y te conectamos con profesionales de tu zona.
+              ¿No encuentras tu ciudad? <a href={`tel:+34${PHONE}`} className="text-foreground underline underline-offset-4 hover:no-underline">Llámanos</a> y te conectamos con profesionales de tu zona.
             </p>
           </div>
         </section>
@@ -388,8 +388,8 @@ export default async function ServiceHubPage({ params }: PageProps) {
             <p className="text-sm text-background/50 mt-6 font-sans max-w-md mx-auto">
               Profesionales verificados. Presupuestos gratis. Resultados garantizados.
             </p>
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-              <MessageCircle className="w-4 h-4" /> Contactar ahora
+            <a href={`tel:+34${PHONE}`} className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 mt-10 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
+              <Phone className="w-4 h-4" /> Llamar ahora
             </a>
           </div>
         </section>

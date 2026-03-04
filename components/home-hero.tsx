@@ -1,6 +1,6 @@
-import { MessageCircle, ArrowDown } from "lucide-react"
+import { Phone, ArrowDown } from "lucide-react"
 
-const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
+const PHONE = "936941859"
 
 export function HomeHero() {
   return (
@@ -35,12 +35,10 @@ export function HomeHero() {
             </p>
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
               <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`tel:+34${PHONE}`}
                 className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
               >
-                <MessageCircle className="w-4 h-4" />
+                <Phone className="w-4 h-4" />
                 Presupuesto gratis
               </a>
               <a

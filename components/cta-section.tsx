@@ -1,6 +1,6 @@
-import { MessageCircle, ArrowRight } from "lucide-react"
+import { Phone, ArrowRight } from "lucide-react"
 
-const WA_URL = "https://wa.me/34936941859?text=Hola%2C%20me%20interesa%20una%20reforma%20de%20cocina."
+const PHONE = "936941859"
 
 export function CtaSection() {
   return (
@@ -28,13 +28,11 @@ export function CtaSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-10">
             <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`tel:+34${PHONE}`}
               className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity"
             >
-              <MessageCircle className="w-4 h-4" />
-              Contactar por WhatsApp
+              <Phone className="w-4 h-4" />
+              Pedir presupuesto
             </a>
             <a
               href="#servicios"
